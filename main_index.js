@@ -5,7 +5,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
     .then(usersList => {
         for (const usersInfo of usersList) {
             let infoBlock = document.createElement('div')
-            infoBlock.innerText = `${usersInfo.id} : ${usersInfo.name}`;
+            infoBlock.innerText = 'Id: ' + `${usersInfo.id} Name:  ${usersInfo.name}`;
             mainBlock.appendChild(infoBlock);
 
             let infoButton = document.createElement('button');

@@ -7,7 +7,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
         let selectUser = usersList.find(value => value.id === takeInfo);
 
         let allUserInfoBlock = document.createElement('div');
-        generalBlock.appendChild(allUserInfoBlock);
+        generalBlock.insertBefore(allUserInfoBlock, postInfoButton);
             for (let characteristicUser in selectUser) {
                 let characteristic = document.createElement('p')
                     if (typeof selectUser[characteristicUser] !== 'object')
@@ -26,14 +26,14 @@ fetch('https://jsonplaceholder.typicode.com/users')
                             listCharacteristic.appendChild(listCharacteristicPoint);
 
                         if (typeof selectUser[characteristicUser][point] === 'object') {
-                            let additionlistCharacteristic = document.createElement('ul');
-                            listCharacteristic.appendChild(additionlistCharacteristic);
+                            let additionListCharacteristic = document.createElement('ul');
+                            listCharacteristicPoint.appendChild(additionListCharacteristic);
                                 for (const item in selectUser[characteristicUser][point]) {
                                     let listCharacteristicItem = document.createElement('li');
                                         if (typeof selectUser[characteristicUser][item] !== 'object')
                                             listCharacteristicItem.innerText = item + ': ' + selectUser[characteristicUser][point][item];
-                                        else listCharacteristicPoint.innerText = item;
-                                    additionlistCharacteristic.appendChild(listCharacteristicItem);
+                                        else listCharacteristicItem.innerText = item;
+                                    additionListCharacteristic.appendChild(listCharacteristicItem);
                             }
                         }
                     }
@@ -50,12 +50,14 @@ postInfoButton.onclick = function () {
         .then(postList => {
             for (const postListObject of postList) {
                 let postBlock = document.createElement('div');
-                postBlock.innerText = 'Title' + ": " + postListObject.title;
+                let postItem = document.createElement('p');
+                postItem.innerText = 'Title' + ": " + postListObject.title;
                 let postId = postListObject.id;
 
                     let detailsPostButton = document.createElement('button');
                         detailsPostButton.innerText = 'Post Details';
-                        postInfoBlock.append(detailsPostButton, postBlock);
+                        postBlock.append(postItem, detailsPostButton);
+                        postInfoBlock.appendChild(postBlock);
 
                         detailsPostButton.onclick = function (){
                             localStorage.setItem('postId', postId);

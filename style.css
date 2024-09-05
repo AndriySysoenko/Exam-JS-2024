@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+#mainBlock{
+    min-height: 100vh;
+    /*padding: 100px 200px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    background: antiquewhite;
+}
+#generalInfoBlock{
+    width: 860px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+#mainBlock>h1{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 70px;
+}
+#generalInfoBlock>div{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    background: burlywood;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.75);
+}
+#generalInfoBlock>div>p{
+    width: 86%;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+#generalInfoBlock>div>button{
+    width: 60%;
+    height: 50px;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: 2px solid ;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+/*___________________________________page user-details______________________________________*/
+
+#generalBlock{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    background: antiquewhite;
+}
+#generalBlock>h1{
+    font-size: 45px;
+    text-align: center;
+    margin-top: 70px;
+}
+#generalBlock>div{
+    width: 90%;
+    height: 280px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    padding-left: 30px;
+}
+#generalBlock>div>p{
+    font-size: 28px;
+    text-transform: capitalize;
+}
+#generalBlock>div>p>ul>li{
+    font-size: 24px;
+}
+#generalBlock>div>p>ul>li>ul{
+    font-size: 19px;
+}
+#postInfoButton{
+    width: 90%;
+    height: 50px;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: 2px solid;
+    text-transform: capitalize;
+}
+#postInfoBlock{
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+}
+#postInfoBlock>div{
+    width: 200px;
+    height: 200px;
+    background: #e3cba0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 20px;
+}
+#postInfoBlock>div>p{
+    width: 80%;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-top: 20px;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.75);
+    background: rgba(216, 193, 102, 0.75);
+}
+#postInfoBlock>div>button{
+    width: 70%;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid ;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.75);
+}

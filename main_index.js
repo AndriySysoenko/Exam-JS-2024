@@ -1,12 +1,16 @@
-let mainBlock = document.getElementById('mainBlock');
+let generalInfoBlock = document.getElementById('generalInfoBlock');
 
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(usersList => {
         for (const usersInfo of usersList) {
             let infoBlock = document.createElement('div')
-            infoBlock.innerText = 'Id: ' + `${usersInfo.id} Name:  ${usersInfo.name}`;
-            mainBlock.appendChild(infoBlock);
+            let infoId = document.createElement('p');
+            let infoName = document.createElement('p');
+            infoId.innerText = 'Id: ' + `${usersInfo.id}`;
+            infoName.innerText = 'Name: ' + `${usersInfo.name}`;
+            infoBlock.append(infoId, infoName);
+            generalInfoBlock.appendChild(infoBlock);
 
             let infoButton = document.createElement('button');
             infoButton.innerText = 'Details';

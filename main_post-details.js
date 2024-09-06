@@ -1,26 +1,26 @@
-let detailsPostBlock = document.getElementById('detailsPostBlock');
+let allDetailsPost = document.getElementById('allDetailsPost');
 let takePostInfo = +localStorage.getItem('postId');
+let postComments = document.getElementById('postComments');
 
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
-    .then(usersList => {
-        let selectPost = usersList.find(value => value.id === takePostInfo);
+    .then(postsList => {
+        let selectPost = postsList.find(value => value.id === takePostInfo);
         for (let characteristicPost in selectPost) {
             let itemPost = document.createElement('p')
             itemPost.innerText = characteristicPost + ': ' + selectPost[characteristicPost];
-            detailsPostBlock.appendChild(itemPost);
+            allDetailsPost.appendChild(itemPost);
         }
     })
 
-let commentBlock = document.getElementById('commentBlock');
 fetch(`https://jsonplaceholder.typicode.com/posts/${takePostInfo}/comments`)
     .then(response => response.json())
-    .then(commentList => {
-        for (const commentObject of commentList) {
-            for (const commentObjectLine in commentObject) {
-                let itemComment = document.createElement('p');
-                itemComment.innerText = commentObjectLine + ': ' + commentObject[commentObjectLine];
-                commentBlock.appendChild(itemComment);
-            }
+    .then(commentsList => {
+        for (const commentObject of commentsList) {
+            let commentBlock = document.createElement('div');
+            let itemComment = document.createElement('p');
+            itemComment.innerText = 'Body: ' + `${commentObject.body}`;
+            commentBlock.appendChild(itemComment)
+            postComments.appendChild(commentBlock);
         }
     })

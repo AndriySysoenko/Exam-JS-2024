@@ -16,11 +16,13 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 fetch(`https://jsonplaceholder.typicode.com/posts/${takePostInfo}/comments`)
     .then(response => response.json())
     .then(commentsList => {
-        for (const commentObject of commentsList) {
-            let commentBlock = document.createElement('div');
-            let itemComment = document.createElement('p');
-            itemComment.innerText = 'Body: ' + `${commentObject.body}`;
-            commentBlock.appendChild(itemComment)
-            postComments.appendChild(commentBlock);
-        }
+            for (const commentObject of commentsList) {
+                let commentBlock = document.createElement('div');
+                for (const commentObjectLine in commentObject) {
+                    let itemComment = document.createElement('p');
+                    itemComment.innerText = commentObjectLine + ': ' + commentObject[commentObjectLine];
+                    commentBlock.appendChild(itemComment);
+                }
+                postComments.appendChild(commentBlock);
+            }
     })

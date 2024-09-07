@@ -18,7 +18,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 let checkInfo = +localStorage.getItem('id') || 0;
                 checkInfo = `${userInfo.id}`;
                 localStorage.setItem('id', checkInfo);
-                window.location.href = 'user-details.html';
+                location.href = 'user-details.html';
             }
             infoBlock.append(infoButton);
 
